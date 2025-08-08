@@ -2,8 +2,10 @@
 
 Algorithm for estimating the photovoltaic (PV) energy potential of building roofs, relative to the paper "Geometry-aware estimation of photovoltaic energy from aerial LiDAR point clouds".
 
-The estimation of the energy production of a PV system installed on a building roof is based on two routines.
-The first analyzes the roof geometry and determines the maximum number of PV modules that can be installed, while the second computes the amount of energy produced by each of these modules in a given time range.
+The code is based on three submodules:
+ - `PiP-partitioning` is used to partition the input point cloud;
+ - `facades_recognition` is used to identify the roof slopes in each building;
+ - `photovoltaic_energy` is used to estimate the PV energy produced by each building.
 
 ## How to get it 
 
@@ -15,15 +17,15 @@ git clone --recursive https://github.com/TommasoSorgente/PanelLib.git
 
 ## Content of the repository
 
- - `data` meshes, building files and sun database used in the paper, relative to the city of Genoa:
-    - `buildings`, `single_building` output of the roof extraction and characterization algorithm (https://github.com/chiararomanengo/PanelLib) relative to the whole city and a single building;
-    - `city_summer`, `city_summer` meshes of the portion of Genoa considered in the paper, with summer and winter vegetation;
-    - `sun` sun database derived from the public repository https://climate.onebuilding.org/WMO_Region_6_Europe/ITA_Italy/LG_Liguria/ITA_LG_Genoa.161210_TMYx.2007-2021.zip (note that, in the paper we used private sun data and, therefore, the results may differ);
- - `external` links to external libraries, i.e. cinolib (https://github.com/mlivesu/cinolib);
- - `src` the source code;
- - `main.cpp` example of usage;
- - `Parameters.csv` parameters file containing all required input;
- - `tests` parameters files for reproducing the paper results;
+- `data` meshes, building files and sun database used in the paper, relative to the city of Genoa:
+   - `buildings`, `single_building` output of the roof extraction and characterization algorithm (https://github.com/chiararomanengo/PanelLib) relative to the whole city and a single building;
+   - `city_summer`, `city_summer` meshes of the portion of Genoa considered in the paper, with summer and winter vegetation;
+   - `sun` sun database derived from the public repository https://climate.onebuilding.org/WMO_Region_6_Europe/ITA_Italy/LG_Liguria/ITA_LG_Genoa.161210_TMYx.2007-2021.zip (note that, in the paper we used private sun data and, therefore, the results may differ);
+- `external` links to external libraries;
+- `src` the source code;
+- `main.cpp` example of usage;
+- `Parameters.csv` parameters file containing all required input;
+- `tests` parameters files for reproducing the paper results;
 
 ## How to use it
 

@@ -9,7 +9,7 @@ cd "$photovoltaicSubmodulePath"
 
 executable="build/photovoltaic_energy"
 parameters="Parameters.csv"
-#parameters="$scriptDir/tests/building/Parameters_Building_Summer.csv"
+#parameters="$scriptDir/../tests/building/Parameters_Building_Summer.csv"
 
 ./$executable $parameters 
 

@@ -8,9 +8,9 @@ partitioningSubmodulePath="$scriptDir/../PiP-partitioning"
 cd "$partitioningSubmodulePath"
 
 executable="bin/PiP-partitioning"
-output_folder="$scriptDir/data/output_partitioning"
-las_file="$scriptDir/data/pointcloud.las"
-polys="$scriptDir/data/footprints/edifici-3820.shp"
+output_folder="$scriptDir/../data/output_partitioning"
+las_file="$scriptDir/../data/pointcloud.las"
+polys="$scriptDir/../data/footprints/edifici-3820.shp"
 
 mkdir $output_folder
 

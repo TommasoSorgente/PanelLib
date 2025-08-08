@@ -7,6 +7,8 @@ The code is based on three submodules:
  - `facades_recognition` is used to identify the roof slopes in each building;
  - `photovoltaic_energy` is used to estimate the PV energy produced by each building.
 
+![Representative Image](Representative Image/pipeline_h.png)
+
 ## How to get it 
 
 Clone the repository using --recursive:

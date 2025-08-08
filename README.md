@@ -31,17 +31,17 @@ git clone --recursive https://github.com/TommasoSorgente/PanelLib.git
 ## How to use it
 
 Build through CMake by launching the script `build.sh`.
+You can run the whole pipeline at once through the script `run.sh`.
 
-The executable will be available in `${REPO_ROOT}/build`.
-After that, set the `Parameters.csv` file and launch 
+Alternatively, for a manual run:
+ - launch the script `run_partitioning.sh`;
+ - launch the script `run_extraction.sh`;
+ - set the `Parameters.csv` file;
+ - launch the script `run_photovoltaic.sh`;
 
-```
-cd ${REPO_ROOT}/build
-./photovoltaic_energy ${REPO_ROOT}/Parameters.csv
-```
+In the `tests` folder, you can find pre-set parameters files for reproducing the paper results.
 
 The algorithm will print the following output files in the output path specified in `Parameters.csv`:
-
 - a summary of the number of roofs, PV modules and energy of each building;
 - for each roof, a list of its PV modules with energy details;
 - for each roof, if selected, .obj meshes of the roof, the buffered roof, and the PV system;

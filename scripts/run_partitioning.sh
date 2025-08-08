@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Path to this script's directory
-scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
+scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-partitioningSubmodulePath="$scriptDir/PiP-partitioning"
+partitioningSubmodulePath="$scriptDir/../PiP-partitioning"
 
 cd "$partitioningSubmodulePath"
 
@@ -16,6 +16,7 @@ mkdir $output_folder
 
 export LD_LIBRARY_PATH=$partitioningSubmodulePath/external/proj/install-Linux/lib:$LD_LIBRARY_PATH
 
+echo "$executable -L $output_folder -l $las_file -p $polys"
 ./$executable -L $output_folder -l $las_file -p $polys
 
 echo "done!"

@@ -1,5 +1,6 @@
 # PanelLib
 
+<p align="center"><img src="pipeline.png" width="750"></p>
 
 Algorithm for estimating the photovoltaic (PV) energy potential of building roofs, relative to the paper "Geometry-aware estimation of photovoltaic energy from aerial LiDAR point clouds".
 
@@ -82,8 +83,3 @@ If you use PanelLib in your academic projects, please consider citing us using t
   publisher={Elsevier}
 }
 ```
-
-
-
-
-<p align="center"><img src="pipeline.png" width="750"></p>

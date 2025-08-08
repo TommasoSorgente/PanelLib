@@ -12,4 +12,6 @@ matlabExe="/home/tommaso/MATLAB2025/bin/matlab"
 
 "$matlabExe" -batch "main"
 
+rm -r "buildings_Segm"
+
 echo "done!"

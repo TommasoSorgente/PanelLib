@@ -1,8 +1,8 @@
 # PanelLib
 
-<p align="center"><img src="pipeline.png" width="750"></p>
-
 Algorithm for estimating the photovoltaic (PV) energy potential of building roofs, relative to the paper "Geometry-aware estimation of photovoltaic energy from aerial LiDAR point clouds".
+
+<p align="center"><img src="pipeline.png" width="750"></p>
 
 The code is based on three submodules:
  - `PiP-partitioning` used to partition an input point cloud representing a city (or a part of it) according to a given list of building footprints;

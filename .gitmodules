@@ -1,0 +1,6 @@
+[submodule "facades_recognition"]
+	path = facades_recognition
+	url = git@github.com:chiararomanengo/facades_recognition.git
+[submodule "photovoltaic_energy"]
+	path = photovoltaic_energy
+	url = git@github.com:TommasoSorgente/photovoltaic_energy.git

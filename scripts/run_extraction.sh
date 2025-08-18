@@ -11,11 +11,12 @@ cd "$extractionSubmodulePath/code"
 matlabExe="/home/tommaso/MATLAB2025/bin/matlab"
 output_folder="$scriptDir/../data/output_extraction"
 
-"$matlabExe" -batch "main"
+echo "Running: $matlabExe"
+"$matlabExe" -batch "main" || { echo "MATLAB Error"; exit 1; }
 
-rm -r "buildings_Segm"
+rm -rf "buildings_Segm"
 
-mkdir "$scriptDir/../data/single_building"
-cp "$output_folder/building918" "$scriptDir/../data/single_building"
+mkdir -p "$scriptDir/../data/single_building"
+cp -r "$output_folder/building918" "$scriptDir/../data/single_building"
 
 echo "done!"

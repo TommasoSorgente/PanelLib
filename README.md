@@ -1,97 +1,147 @@
-# TO DO
-- controllare la richiesta di password quando si clona
-- scrivere il readme con tutte le dipendenze da librerie e moduli esterni
-- valutare se scrivere o uniformare i readme dei singoli submodules
-- creare drive coi dati
-- ripulire gli output degli script
-- correggere nome "extraction_of_roof_piches"
-- sottomettere
-
-
 # PanelLib
 
-Algorithm for estimating the photovoltaic (PV) energy potential of building roofs, relative to the paper "Geometry-aware estimation of photovoltaic energy from aerial LiDAR point clouds".
+**Algorithm for estimating the photovoltaic (PV) energy potential of building roofs**
 
-<p align="center"><img src="pipeline.png" width="1000"></p>
+This repository contains the implementation of the algorithm described in the paper *"Geometry-aware estimation of photovoltaic energy from aerial LiDAR point clouds"*.
 
-The code is based on three submodules:
-- `PiP-partitioning` used to partition an input point cloud representing a city (or a part of it) according to a given list of building footprints;
-- `extraction_of_roof_piches` used to identify the boundaries and slopes of the roof pitches in each building;
-- `photovoltaic_energy` used to estimate the PV energy produced by each building.
+<p align="center">
+  <img src="pipeline.png" width="800" alt="PanelLib Pipeline Overview">
+</p>
 
-## How to get it 
+## Overview
 
-Clone the repository using --recursive:
+PanelLib provides a complete pipeline for analyzing the photovoltaic potential of urban buildings using aerial LiDAR point clouds. The system automatically processes point cloud data to identify roof structures and estimate their solar energy generation capacity.
 
-```
+### Key Features
+
+- **Automated roof segmentation** from LiDAR point clouds
+- **Geometric analysis** of roof pitches and orientations
+- **Solar irradiance modeling** with seasonal variations
+- **PV panel placement optimization**
+- **Energy yield estimation** for individual buildings or entire districts
+
+## Architecture
+
+The system is built on three main components:
+
+1. **`PiP-partitioning`** - Partitions input point clouds by building footprints
+2. **`extraction_of_roof_pitches`** - Identifies roof boundaries and slope characteristics
+3. **`photovoltaic_energy`** - Calculates PV energy potential for each building
+
+## Installation
+
+### Prerequisites
+
+Before building PanelLib, ensure you have the following dependencies installed:
+
+- **CGAL 5.5** or higher
+- **CMake 3.15** or higher
+- **MATLAB** (with required toolboxes - *documentation pending*)
+- **C++17** compatible compiler
+
+### Clone the Repository
+
+```bash
 git clone --recursive https://github.com/TommasoSorgente/PanelLib.git
+cd PanelLib
 ```
 
-## Content of the repository
+### Build
 
-- `scripts` bash scripts for compiling and running all the executables;
-- `data` meshes, building files and sun database used in the paper, relative to the city of Genoa:
-   - `pointcloud.las` point cloud representing the buildings of area #3820 of Genoa georeferenced with EPSG 7791 (from the public geoportal https://mappe.comune.genova.it/MapStore2/#/viewer/1000003072);
-   - `footprints` ESRI shapefile representing the buildings footprints of area #3820 of Genoa (from the public geoportal https://mappe.comune.genova.it/MapStore2/#/viewer/1000003072);
-   - `city_summer`, `city_winter` meshes of area #3820 of Genoa considered in the paper, with summer and winter vegetation;
-   - `sun` sun database derived from the public repository https://climate.onebuilding.org/WMO_Region_6_Europe/ITA_Italy/LG_Liguria/ITA_LG_Genoa.161210_TMYx.2007-2021.zip (note that, in the paper we used private sun data and, therefore, the results may differ);
-- `parameters_files` parameters files for reproducing the paper results;
+Execute the build script:
 
-## How to build it
+```bash
+chmod +x scripts/build.sh
+./scripts/build.sh
+```
 
-Build through CMake by launching the script `build.sh` in the `scripts` folder.
-The following libraries are required:
-- CGAL 5.5 (or higher)
-- MATLAB modules: 
-- **TBD**
+### Data Setup
 
-Download the data from **TBD**.
+Download the required data from the link []:
+- `pointcloud.las` - LiDAR point cloud (EPSG 7791)
+- `footprints/` - Building footprint shapefiles
+- `city_summer/`, `city_winter/` - Seasonal 3D city models
+- `sun/` - Solar irradiance database
 
-## How to use it
+*Data source: [Genoa Municipality Geoportal](https://mappe.comune.genova.it/MapStore2/#/viewer/1000003072)*
 
-In the `scripts` folder, launch the scripts `run_partitioning.sh` and `run_extraction.sh` (in this order) to compute the results of the first two submodules.
-The output will be stored in the `data` folder, and has to be computed only once.
+## Usage
 
-Then, set the `Parameters.csv` file according to your needs. 
-You can find two examples in the `scripts` folder (for a single building and a whole city), and pre-set parameters files for reproducing the paper results in the `parameters_files` folder.
+### Quick Start
+
+1. **Prepare your data**: Place your LiDAR point cloud and building footprints in the `data/` directory
+
+2. **Run the preprocessing pipeline**: Phis has to be launched only once.
+   ```bash
+   ./scripts/run_partitioning.sh
+   ./scripts/run_extraction.sh
+   ```
+
+3. **Configure parameters**: Edit the parameters file according to your requirements. You can find two examples in the `scripts` folder (for a single building and a whole city), and pre-set parameters files for reproducing the paper results in the `parameters_files` folder.
+
+4. **Execute analysis**:
+   - For single building analysis: `./scripts/run_photovoltaic_building.sh`
+   - For city-wide analysis: `./scripts/run_photovoltaic_city.sh`
+
+### Output
 
 When launched with the script `run_photovoltaic_building.sh` the program exports .obj meshes of each roof, buffered roof, and PV system, a list of the PV modules installable on each roof with energy details, and shows a preview of the results.
 
-Instead, due to the large number of buildings, with the script `run_photovoltaic_city.sh` the program does not export meshes, and a `output_photovoltaic_city.csv` file is generated with the number of roofs, PV modules and energy of each building.
+With the script `run_photovoltaic_city.sh`, due to the large number of buildings, the program does not export meshes, and a `output_photovoltaic_city.csv` file is generated with the number of roofs, PV modules and energy of each building.
 
-In both cases, the output of this step is generated in the `data` folder, with one subdirectory per each building.
+### Visualization
 
-## Reproduce paper results
+Results can be visualized using ParaView with the included Python scripts `visualize_building.py` and `visualize_city.py`. The system will prompt for:
+- Output directory path, for building-level analysis (e.g., `/home/tommaso/PanelLib/data/output_photovoltaic_single_building`)
+- Module file and mesh file paths, for city-level analysis (e.g., `/home/tommaso/PanelLib/data/output_photovoltaic_city.csv`, `/home/tommaso/PanelLib/data/city_summer.obj`)
 
-In the `parameters_files` folder, we provide predefined parameters files for reproducing Fig. 10, 11, 12, 13, and 14 of the paper.
+## Reproducing Paper Results
 
-To do so, modify the `parameters` variable in the `run_photovoltaic_building.sh` (or `run_photovoltaic_city.sh`) script with one of the pre-set parameters configurations and launch it.
+We provide predefined parameters files for reproducing Fig. 10, 11, 12, 13, and 14 of the paper:
 
-After running the script, open ParaView and launch the Python script `visualize_building.py` or `visualize_city.py`.
-
-A pop-up will ask you to specify the ABSOLUTE path of (i) the output folder you want to visualize (e.g., `/home/tommaso/PanelLib/data/output_photovoltaic_single_building`) in the first case, or (ii) the location of the modules file (e.g., `/home/tommaso/PanelLib/data/output_photovoltaic_city.csv`) and the mesh file (e.g., `/home/tommaso/PanelLib/data/city_summer.obj`) in the second case.
+1. Navigate to `parameters_files/` and choose the appropriate configuration
+2. Update the `parameters` variable in the run script
+3. Execute the analysis
+4. Use the provided ParaView scripts for visualization
 
 Note that, for reproducing Fig. 10(b) you will have to change the color scale to `Cold and Hot`.
 
-## Authors
+## License
 
-- Tommaso Sorgente (CNR-IMATI Genova, Italy)
-- Chiara Romanengo (CNR-IMATI Genova, Italy)
-- Daniela Cabiddu  (CNR-IMATI Genova, Italy)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Citing us
+## Citation
 
-If you use PanelLib in your academic projects, please consider citing us using the following BibTeX entry:
+If you use PanelLib in your research, please cite our paper:
 
-```
-@article{-,
+```bibtex
+@article{romanengo2025geometry,
   title={Geometry-aware estimation of photovoltaic energy from aerial LiDAR point clouds},
   author={Romanengo, Chiara and Sorgente, Tommaso and Cabiddu, Daniela and Belussi, Lorenzo and Danza, Ludovico and Ghellere, Matteo and Mortara, Michela},
-  journal={Computers & Graphics},
-  volume={-},
-  number={-},
-  pages={-},
+  journal={Computers \& Graphics},
   year={2025},
-  publisher={Elsevier}
+  publisher={Elsevier},
+  note={In press}
 }
 ```
+
+## Authors
+
+- **Tommaso Sorgente** - CNR-IMATI, Genova, Italy
+- **Chiara Romanengo** - CNR-IMATI, Genova, Italy  
+- **Daniela Cabiddu** - CNR-IMATI, Genova, Italy
+
+## Acknowledgments
+
+This work was supported by [funding information]. We thank the Municipality of Genoa for providing the geospatial datasets used in this research.
+
+## Support
+
+For questions or support, please:
+- Open an issue on GitHub
+- Contact the authors directly
+- Check the [documentation](docs/) (coming soon)
+
+---
+
+**Keywords**: photovoltaic, solar energy, LiDAR, point cloud processing, urban planning, renewable energy assessment

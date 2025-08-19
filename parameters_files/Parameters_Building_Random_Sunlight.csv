@@ -1,11 +1,11 @@
 # GENERAL
-Build,  ../data/single_building,    	buildings directory
-Sun,    ../data/sun,               	sun DB
-City,   ../data/city_summer.obj,   	city mesh
-Output, ../tests/building/Building_Winter,    	output directory
-Tini,   8947,   initial time (0)
-Tfin,   1896,   final time (8760)
-MOD,	2,	compute sunlight (0) radiation (1) energy (2) or synthetic (3)
+Build,  ../data/output_extraction_building,	buildings directory
+Sun,    ../data/sun,                  	sun DB
+City,   ../data/city_summer.obj,      	city mesh
+Output, ../data/output_photovoltaic_Building_Random_Sunlight, 	output directory
+Tini,   2184,   initial time (0)
+Tfin,   2208,   final time (8760)
+MOD,	0,	compute sunlight (0) radiation (1) energy (2) or synthetic (3)
 Save,	1,	save only modules (0) or also meshes (1)
 Load,   0,      load (1) or compute (0) the panels
 GUI,    0,      visualize the output (1) or not (0)

@@ -1,8 +1,8 @@
 # GENERAL	
-Build,  ../data/single_building,		buildings directory
+Build,  ../data/output_extraction_building,		buildings directory
 Sun,    ../data/sun,                   		sun DB
 City,   ../data/city_summer.obj,   	 	city mesh
-Output, ../tests/building/Building_Random_Radiation, 	output directory
+Output, ../data/output_photovoltaic_Building_Random_Radiation, 	output directory
 Tini,   2184,   initial time (0)
 Tfin,   2208,   final time (8760)
 MOD,	1,	compute sunlight (0) radiation (1) energy (2) or synthetic (3)

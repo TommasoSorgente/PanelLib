@@ -24,9 +24,9 @@ SetActiveView(renderView1)
 
 # Ask for district_path
 if not sys.argv or len(sys.argv) == 1:
-    district_path = input("Input the ABSOLUTE path of the output folder: ").strip()
+   district_path = input("Input the ABSOLUTE path of the output folder: ").strip()
 else:
-    district_path = sys.argv[1]
+   district_path = sys.argv[1]
 district_dir = os.path.basename(os.path.normpath(district_path))
 print(f"Processing district: {district_dir}")
 

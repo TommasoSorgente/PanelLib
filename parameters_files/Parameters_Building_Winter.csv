@@ -2,9 +2,9 @@
 Build,  ../data/single_building,    	buildings directory
 Sun,    ../data/sun,               	sun DB
 City,   ../data/city_summer.obj,   	city mesh
-Output, ../tests/building/Building_Winter_Cloudy,output directory
-Tini,   0,      initial time (0)
-Tfin,   24,   	final time (8760)
+Output, ../data/output_photovoltaic_Building_Winter,    	output directory
+Tini,   8947,   initial time (0)
+Tfin,   1896,   final time (8760)
 MOD,	2,	compute sunlight (0) radiation (1) energy (2) or synthetic (3)
 Save,	1,	save only modules (0) or also meshes (1)
 Load,   0,      load (1) or compute (0) the panels

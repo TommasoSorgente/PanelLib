@@ -22,8 +22,16 @@ layout1 = CreateLayout(name='Layout #1')
 layout1.AssignView(0, renderView1)
 SetActiveView(renderView1)
 
+# Ask for modules_file
+modules_file = input("Input the ABSOLUTE path of the modules file: ").strip()
+print(f"Processing modules file: {modules_file}")
+
+# Ask for mesh_file
+mesh_file = input("Input the ABSOLUTE path of the mesh file: ").strip()
+print(f"Processing mesh file: {mesh_file}")
+
 # Load the mesh file
-mesh_file = os.path.join(os.path.dirname(__file__), '../../data/city_summer.obj')
+#mesh_file = os.path.join(os.path.dirname(__file__), '../../data/city_summer.obj')
 if not os.path.exists(mesh_file):
     raise FileNotFoundError(f"Mesh file not found: {mesh_file}")
 mesh = OpenDataFile(mesh_file)
@@ -32,7 +40,7 @@ mesh_display = Show(mesh, renderView1, 'GeometryRepresentation')
 mesh_display.Representation = 'Surface'
 
 # Load the modules file
-modules_file = os.path.join(os.path.dirname(__file__), 'modules_summer.csv')
+#modules_file = os.path.join(os.path.dirname(__file__), 'modules_summer.csv')
 if not os.path.exists(modules_file):
     raise FileNotFoundError(f"Modules file not found: {modules_file}")
 registration_name = f"PV Modules"
@@ -60,7 +68,7 @@ PVmodulesDisplay = Show(PVmodules, renderView1, 'GeometryRepresentation')
 PVmodulesDisplay.Representation = 'Points'
 PVmodulesDisplay.ColorArrayName = ['POINTS', ' energy']
 PVmodulesDisplay.LookupTable = energy_LUT
-PVmodulesDisplay.PointSize = 10.0
+PVmodulesDisplay.PointSize = 2.0
 PVmodulesDisplay.RenderPointsAsSpheres = 0
 
 energy_LUT.RescaleTransferFunctionToDataRange(False)

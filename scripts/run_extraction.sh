@@ -16,7 +16,7 @@ echo "Running: $matlabExe"
 
 rm -rf "buildings_Segm"
 
-mkdir -p "$scriptDir/../data/single_building"
-cp -r "$output_folder/building918" "$scriptDir/../data/single_building"
+mkdir -p "$scriptDir/../data/output_extraction_single_building"
+cp -r "$output_folder/building918" "$scriptDir/../data/output_extraction_single_building"
 
 echo "done!"

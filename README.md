@@ -1,3 +1,13 @@
+# TO DO
+- controllare la richiesta di password quando si clona
+- l'eseguibile "CGAL-apps-scaline-normals" non viene compilato
+- scrivere il readme con tutte le dipendenze da librerie e moduli esterni
+- valutare se scrivere o uniformare i readme dei singoli submodules
+- creare drive coi dati
+- ripulire gli output degli script
+- sottomettere
+- correggere nome "extraction_of_roof_piches"
+
 # PanelLib
 
 Algorithm for estimating the photovoltaic (PV) energy potential of building roofs, relative to the paper "Geometry-aware estimation of photovoltaic energy from aerial LiDAR point clouds".
@@ -8,7 +18,6 @@ The code is based on three submodules:
  - `PiP-partitioning` used to partition an input point cloud representing a city (or a part of it) according to a given list of building footprints;
  - `extraction_of_roof_piches` used to identify the boundaries and slopes of the roof pitches in each building;
  - `photovoltaic_energy` used to estimate the PV energy produced by each building.
-
 
 ## How to get it 
 
@@ -31,9 +40,13 @@ git clone --recursive https://github.com/TommasoSorgente/PanelLib.git
 
 ## How to use it
 
-Build through CMake by launching the script `build.sh`.
-You can run the whole pipeline at once through the script `run.sh`.
+Build through CMake by launching the script `build.sh` in the `scripts` folder.
+The following libraries are required:
+- CGAL 5.5 (or higher)
+- MATLAB modules: 
+- *TBD*
 
+You can run the whole pipeline at once through the script `run.sh`.
 Alternatively, for a manual run:
  - launch the script `run_partitioning.sh`;
  - launch the script `run_extraction.sh`;
@@ -42,10 +55,13 @@ Alternatively, for a manual run:
 
 In the `tests` folder, you can find pre-set parameters files for reproducing the paper results.
 
-The algorithm will print the following output files in the output path specified in `Parameters.csv`:
-- a summary of the number of roofs, PV modules and energy of each building;
-- for each roof, a list of its PV modules with energy details;
-- for each roof, if selected, .obj meshes of the roof, the buffered roof, and the PV system;
+The algorithm will print the following output files in the `data` folder, each containing one subdirectory per each building:
+- `output_partitioning` contains the point cloud;
+- `output_extraction` contains the roof pitches polygons and orientation angles;
+- `output_photovoltaic` contains the PV system, described by:
+	- a `summary.csv` file with the number of roofs, PV modules and energy of each building;
+	- for each roof, a list of its PV modules with energy details;
+	- for each roof, if selected, .obj meshes of the roof, the buffered roof, and the PV system;
 
 Moreover, if GUI is selected, a graphical interface will show a preview of the result.
 

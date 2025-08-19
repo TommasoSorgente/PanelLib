@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e  # stop at first error
+
 # Path to this script's directory
 scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -7,8 +9,6 @@ scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 partitioningSubmodulePath="$scriptDir/../PiP-partitioning"
 extractionSubmodulePath="$scriptDir/../extraction_of_roof_piches"
 photovoltaicSubmodulePath="$scriptDir/../photovoltaic_energy"
-
-#
 
 echo "compiling Partitioning submodule"
 cd "$partitioningSubmodulePath"
@@ -18,7 +18,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 echo "Partitioning submodule done!"
 
-#
+echo ""
 
 echo "compiling Extraction submodule"
 CGAL_path="$extractionSubmodulePath/CGAL-apps"
@@ -30,7 +30,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=$output_pat
 make 
 echo "Extraction submodule done!"
 
-#
+echo ""
 
 echo "compiling Photovoltaic submodule"
 cd "$photovoltaicSubmodulePath"

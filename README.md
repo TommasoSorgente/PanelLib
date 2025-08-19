@@ -60,7 +60,7 @@ chmod +x scripts/build.sh
 Download the required data from the link []:
 - `pointcloud.las` - LiDAR point cloud (EPSG 7791)
 - `footprints/` - Building footprint shapefiles
-- `city_summer/`, `city_winter/` - Seasonal 3D city models
+- `city_summer.obj`, `city_winter.obj` - Seasonal 3D city models
 - `sun/` - Solar irradiance database
 
 *Data source: [Genoa Municipality Geoportal](https://mappe.comune.genova.it/MapStore2/#/viewer/1000003072)*

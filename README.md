@@ -133,7 +133,10 @@ If you use PanelLib in your research, please cite our paper:
 
 ## Acknowledgments
 
-This work was supported by [funding information]. We thank the Municipality of Genoa for providing the geospatial datasets used in this research.
+This work is partially supported by the project “House of emerging technologies of Matera” (CTEMT) funded by the Ministry of Economic Development of Italy, CUP I14E20000020001. 
+D. Cabiddu, M. Mortara, C. Romanengo, and T. Sorgente are members of the RAISE Innovation Ecosystem, funded by the European Union - NextGenerationEU and by the Ministry of University and Research (MUR), National Recovery and Resilience Plan (NRRP), Mission 4, Component 2, Investment 1.5, project ``RAISE - Robotics and AI for Socio-economic Empowerment'' (ECS00000035).
+T. Sorgente is affiliated to the Italian Gruppo Nazionale Calcolo Scientifico - Istituto Nazionale di Alta Matematica (GNCS-INdAM).
+We also thank the Genova municipality for the LiDAR data of the city.
 
 ## Support
 

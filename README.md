@@ -78,7 +78,7 @@ Download the required data from the link [DATA DRIVE](https://cnrsc-my.sharepoin
 
 1. **Prepare your data**: Place your LiDAR point cloud and building footprints in the `data/` directory
 
-2. **Run the preprocessing pipeline**: Phis has to be launched only once.
+2. **Run the preprocessing pipeline**: This has to be launched only once.
    ```bash
    ./scripts/run_partitioning.sh
    ./scripts/run_extraction.sh
@@ -94,7 +94,7 @@ Download the required data from the link [DATA DRIVE](https://cnrsc-my.sharepoin
 
 When launched with the script `run_photovoltaic_building.sh` the program exports .obj meshes of each roof, buffered roof, and PV system, a list of the PV modules installable on each roof with energy details, and shows a preview of the results.
 
-With the script `run_photovoltaic_city.sh`, due to the large number of buildings, the program does not export meshes, and a `output_photovoltaic_city.csv` file is generated with the number of roofs, PV modules and energy of each building.
+With the script `run_photovoltaic_city.sh`, due to the large number of buildings, the program does not export meshes, and an `output_photovoltaic_city.csv` file is generated with the number of roofs, PV modules and energy of each building.
 
 ### Visualization
 

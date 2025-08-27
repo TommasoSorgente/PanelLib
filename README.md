@@ -57,7 +57,7 @@ chmod +x scripts/build.sh
 
 ### Data Setup
 
-Download the required data from the link [DATA DRIVE](https://cnrsc-my.sharepoint.com/personal/daniela_cabiddu_cnr_it/_layouts/15/onedrive.aspx?e=5%3A4d0c976374ad4389a8ade3ad7747b522&sharingv2=true&fromShare=true&at=9&CID=4807ee8e%2D45d5%2D4870%2Db9da%2Dd3a153fee514&id=%2Fpersonal%2Fdaniela%5Fcabiddu%5Fcnr%5Fit%2FDocuments%2FConferences%2FSMI2025%2FReplicability&FolderCTID=0x0120004FE7B604C1280744B61B5749FDB8E8B9&view=0):
+Download the required data from the link [DATA DRIVE](https://cnrsc-my.sharepoint.com/:f:/g/personal/daniela_cabiddu_cnr_it/Es8Tl8-m9I5BrBqlTU6of_sB5UhM6GQfPgJmDPKmub2CEw?e=4XFvBX):
 - `pointcloud.las` - LiDAR point cloud (EPSG 7791)
 - `footprints/` - Building footprint shapefiles
 - `city_summer.obj`, `city_winter.obj` - Seasonal 3D city models

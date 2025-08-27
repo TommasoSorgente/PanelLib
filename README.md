@@ -58,12 +58,12 @@ chmod +x scripts/build.sh
 ### Data Setup
 
 Download the required data from the link [DATA DRIVE](https://cnrsc-my.sharepoint.com/:f:/g/personal/daniela_cabiddu_cnr_it/Es8Tl8-m9I5BrBqlTU6of_sB5UhM6GQfPgJmDPKmub2CEw?e=4XFvBX):
-- `pointcloud.las` - LiDAR point cloud (EPSG 7791)
-- `footprints/` - Building footprint shapefiles
+- `pointcloud.las` - LiDAR point cloud (EPSG 7791) from [Genoa Municipality Geoportal](https://mappe.comune.genova.it/MapStore2/#/viewer/1000003072)
+- `footprints/` - Building footprint shapefiles from [Genoa Municipality Geoportal](https://mappe.comune.genova.it/MapStore2/#/viewer/1000003072)
 - `city_summer.obj`, `city_winter.obj` - Seasonal 3D city models
-- `sun/` - Solar irradiance database
+- `sun/` - Solar irradiance database from [Climate.OneBuilding.Org](https://climate.onebuilding.org/WMO_Region_6_Europe/ITA_Italy/LG_Liguria/ITA_LG_Genoa.161210_TMYx.2007-2021.zip)
 
-*Data source: [Genoa Municipality Geoportal](https://mappe.comune.genova.it/MapStore2/#/viewer/1000003072)*
+Note that, the Solar irradiance database used in the original paper was derived from the database of the Typical Meteorological Year (TMY), defined by ISO 15927-4 and elaborated by the Comitato Termotecnico Italiano (CTI) for the geographic context of application [Comitato Termotecnico Italiano](https://www.cti2000.it/index.php?controller=news&action=show&newsid=34985).
 
 ## Usage
 

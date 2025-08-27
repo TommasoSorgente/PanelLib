@@ -1,10 +1,3 @@
-# TO DO
-- controllare idpendenze esterne
-- aggiornare readme submodules
-- correggere il nome del submodule "extraction_of_roof_piches" (manca una T)
-- pulire la cartella .git con git filter-repo
-- sottomettere, mandando privatamente la cartella sun corretta
-
 # PanelLib
 
 **Algorithm for estimating the photovoltaic (PV) energy potential of building roofs**

@@ -36,7 +36,7 @@ Before building PanelLib, ensure you have the following dependencies installed:
 
 - **CGAL 5.5** or higher
 - **CMake 3.15** or higher
-- **MATLAB** (with required toolboxes - *documentation pending*)
+- **MATLAB** (with required toolboxes - *Computer Vision, Image Processing, Lidar, Mapping, Statistics and Machine Learning, Text Analytics*)
 - **C++17** compatible compiler
 
 ### Clone the Repository

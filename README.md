@@ -63,7 +63,7 @@ Download the required data from the link [DATA DRIVE](https://cnrsc-my.sharepoin
 - `city_summer.obj`, `city_winter.obj` - Seasonal 3D city models
 - `sun/` - Solar irradiance database from [Climate.OneBuilding.Org](https://climate.onebuilding.org/WMO_Region_6_Europe/ITA_Italy/LG_Liguria/ITA_LG_Genoa.161210_TMYx.2007-2021.zip)
 
-Note that, the Solar irradiance database used in the original paper was derived from the database of the Typical Meteorological Year (TMY), defined by ISO 15927-4 and elaborated by the Comitato Termotecnico Italiano (CTI) for the geographic context of application [Comitato Termotecnico Italiano](https://www.cti2000.it/index.php?controller=news&action=show&newsid=34985).
+Note that, the Solar irradiance database used in the original paper was derived from the database of the Typical Meteorological Year (TMY), defined by ISO 15927-4 and elaborated by the [Comitato Termotecnico Italiano](https://www.cti2000.it/index.php?controller=news&action=show&newsid=34985) for the geographic context of application.
 
 ## Usage
 

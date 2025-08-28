@@ -7,7 +7,7 @@ scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Submodules
 partitioningSubmodulePath="$scriptDir/../PiP-partitioning"
-extractionSubmodulePath="$scriptDir/../extraction_of_roof_piches"
+extractionSubmodulePath="$scriptDir/../extraction_of_roof_pitches"
 photovoltaicSubmodulePath="$scriptDir/../photovoltaic_energy"
 
 echo "compiling Partitioning submodule"

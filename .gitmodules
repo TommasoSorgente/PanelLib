@@ -1,9 +1,9 @@
 [submodule "PiP-partitioning"]
 	path = PiP-partitioning
 	url = https://github.com/DanielaCabiddu/PiP-partitioning.git
-[submodule "extraction_of_roof_piches"]
-	path = extraction_of_roof_piches
-	url = https://github.com/chiararomanengo/extraction_of_roof_piches.git
+[submodule "extraction_of_roof_pitches"]
+	path = extraction_of_roof_pitches
+	url = https://github.com/chiararomanengo/extraction_of_roof_pitches.git
 [submodule "photovoltaic_energy"]
 	path = photovoltaic_energy
 	url = https://github.com/TommasoSorgente/photovoltaic_energy.git

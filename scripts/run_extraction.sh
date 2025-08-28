@@ -3,7 +3,7 @@
 # Path to this script's directory
 scriptDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-extractionSubmodulePath="$scriptDir/../extraction_of_roof_piches"
+extractionSubmodulePath="$scriptDir/../extraction_of_roof_pitches"
 
 cd "$extractionSubmodulePath/code"
 
